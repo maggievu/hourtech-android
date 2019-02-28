@@ -47,7 +47,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements
         viewHolder.searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "click on " + listItem.getUsername(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "click on " + listItem.getUsername(), Toast.LENGTH_SHORT).show();
             }
         });
     }
