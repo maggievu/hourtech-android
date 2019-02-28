@@ -47,11 +47,17 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView searchRecyclerView;
     private List<ListItem> listItems;
 
+//test to get the techky json
+//    public JSONArray techyArray;
+
     //first try with the mlab, everything on the same collection
     //private static final String URL_DATA = "https://api.mlab.com/api/1/databases/hourtech/collections/hourTech?apiKey=qqa6rAFdcOvgeTYXIRzlwvgXwm31LQpF";
 
     //second try, keywords in a separated collection
-    private static final String URL_DATA = "https://api.mlab.com/api/1/databases/hourtech/collections/keywords?apiKey=qqa6rAFdcOvgeTYXIRzlwvgXwm31LQpF";
+    private static final String URL_KEYWORDS = "https://api.mlab.com/api/1/databases/hourtech/collections/keywords?apiKey=qqa6rAFdcOvgeTYXIRzlwvgXwm31LQpF";
+    //just the techky collection
+    private static final String URL_TECHKY = "https://api.mlab.com/api/1/databases/hourtech/collections/techky?apiKey=qqa6rAFdcOvgeTYXIRzlwvgXwm31LQpF";
+
 
     //json for test
     //private static final String URL_DATA = "https://jsonplaceholder.typicode.com/users";
@@ -71,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         searchRecyclerView.setHasFixedSize(true);
         searchRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         listItems = new ArrayList<>();
-
+//        loadTechy();
         loadRecyclerViewData();
 
     }
@@ -101,41 +107,42 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //TODO: figure out how to get from the techky collection and put in the same recyclerview
 
-    private void loadRecyclerViewData() {
+    /*
+    private void loadTechy() {
 
         StringRequest stringRequest =
-                new StringRequest(Request.Method.GET, URL_DATA, new Response.Listener<String>() {
+                new StringRequest(Request.Method.GET, URL_TECHKY, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            Log.e("response from mlab is: ", "" + response);
+                            JSONArray techyArray = new JSONArray(response);
 
-                            JSONArray array = new JSONArray(response);
+                            for (int i = 0; i < techyArray.length(); i++) {
 
-                            for (int i = 0; i < array.length(); i++) {
-                                JSONObject o = array.getJSONObject(i);
-                                JSONArray keywords = o.getJSONArray("keywords");
+                                JSONObject o = techyArray.getJSONObject(i);
+                                JSONArray techky = o.getJSONArray("techky");
+                                Log.e("banana", "" + techky);
 
-                                for (int k = 0; k < keywords.length(); k++) {
-                                    String key = keywords.getString(k);
-                                    String test;
-                                    ListItem item = new ListItem(
-                                            test = key,
-                                            test = key,
-                                            test = key
+                                for (int k = 0; k < techky.length(); k++) {
+                                    JSONObject x = techky.getJSONObject(k);
 
+                                    ListItem item2 = new ListItem(
+                                            x.getString("username"),
+                                            x.getString("role"),
+                                            x.getString("email")
                                     );
-                                    listItems.add(item);
+                                    listItems.add(item2);
                                 }
                             }
 
                             adapter = new Adapter(listItems, getApplicationContext());
                             searchRecyclerView.setAdapter(adapter);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Log.d("Got exception", e.getMessage());
-
                         }
                     }
                 },
@@ -147,8 +154,103 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         });
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+*/
+
+    //get the keywords from the jsonfile in mlab and put into the recyclerview
+    private void loadRecyclerViewData() {
+        //get the keywords json
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL_KEYWORDS, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                final String response1 = response;
+                //get the techky json
+                StringRequest stringRequest2 = new StringRequest(Request.Method.GET, URL_TECHKY, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response2) {
+                        Log.e("response one", "" + response1);
+                        Log.e("response two ", "" + response2);
+
+                        //TODO: stopped here 28/02 01:08. need to merge the techky name with the keyword
+
+                        try {
+                            JSONArray techyArray = new JSONArray(response2);
+                            JSONArray array = new JSONArray(response1);
+
+                            for (int i = 0; i < array.length(); i++) {
+                                JSONObject o = array.getJSONObject(i);
+
+                                JSONArray keywords = o.getJSONArray("keywords");
+
+                                for (int k = 0; k < keywords.length(); k++) {
+                                    String key = keywords.getString(k);
+
+                                    String test;
+                                    ListItem item = new ListItem(
+                                            key,
+                                            key,
+                                            key
+                                    );
+                                    listItems.add(item);
+                                }
+                            }
+
+//                                    adapter = new Adapter(listItems, getApplicationContext());
+//                                    searchRecyclerView.setAdapter(adapter);
+                            for (int i = 0; i < techyArray.length(); i++) {
+
+                                JSONObject o = techyArray.getJSONObject(i);
+                                JSONArray techky = o.getJSONArray("techky");
+
+                                for (int k = 0; k < techky.length(); k++) {
+                                    JSONObject x = techky.getJSONObject(k);
+
+                                    ListItem item2 = new ListItem(
+                                            x.getString("username"),
+                                            x.getString("role"),
+                                            x.getString("email")
+                                    );
+                                    listItems.add(item2);
+                                }
+                            }
+                            adapter = new Adapter(listItems, getApplicationContext());
+                            searchRecyclerView.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.d("Got exception", e.getMessage());
+                        }
+                    }
+                },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+//                                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                                Log.d("Got error", error.getMessage());
+
+                            }
+                        });
+                RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                requestQueue.add(stringRequest2);
+
+
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+//                                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.d("Got error", error.getMessage());
+
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest1);
+
+    }
+
+
 }

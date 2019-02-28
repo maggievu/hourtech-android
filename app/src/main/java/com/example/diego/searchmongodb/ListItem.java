@@ -2,10 +2,10 @@ package com.example.diego.searchmongodb;
 
 public class ListItem {
 
-    private String username, name, email, imageUrl;
+    private String keyword, name, email, imageUrl;
 
-    public String getUsername() {
-        return username;
+    public String getKeyword() {
+        return keyword;
     }
 
     public String getName() {
@@ -20,8 +20,8 @@ public class ListItem {
 //        return imageUrl;
 //    }
 
-    public ListItem(String username, String name, String email) {
-        this.username = username;
+    public ListItem(String keyword, String name, String email) {
+        this.keyword = keyword;
 //        this.name = name;
 //        this.email = email;
 //        this.imageUrl = imageUrl;

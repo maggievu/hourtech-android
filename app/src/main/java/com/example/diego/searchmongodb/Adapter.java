@@ -41,13 +41,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final ListItem listItem = listItems.get(i);
 
-        viewHolder.usernameLabel.setText(listItem.getUsername());
+        viewHolder.usernameLabel.setText(listItem.getKeyword());
         viewHolder.nameLabel.setText(listItem.getName());
         viewHolder.emailLabel.setText(listItem.getEmail());
         viewHolder.searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "click on " + listItem.getUsername(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "click on " + listItem.getKeyword(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -73,7 +73,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements
     }
 
 
-
     private Filter filter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
@@ -85,7 +84,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
                 for (ListItem item : listItemsFull){
-                    if (item.getUsername().toLowerCase().contains(filterPattern)){
+                    if (item.getKeyword().toLowerCase().contains(filterPattern)){
                         filteredList.add(item);
                     }
                 }
