@@ -1,4 +1,4 @@
-package com.example.diego.searchmongodb;
+package com.example.diego.staticcapstone;
 
 import org.junit.Test;
 

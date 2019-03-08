@@ -1,6 +1,24 @@
 <resources>
-    <string name="app_name">SearchMongoDB</string>
+    <string name="app_name">HourTech</string>
+    <string name="searchInput">Type to search</string>
+    <string name="text_intro_search">Enter a search word, like a skill you would like help with, or a job offer you would like to find.</string>
+    <string name="searchButton">Search</string>
+    <string name="title_activity_drawer">Drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="user_name">Bob Vance</string>
+    <string name="user_role">Manager</string>
+    <string name="profile_title">Contact Information</string>
+    <string name="user_name_details_title">Name</string>
+    <string name="user_email_details_title">Email</string>
+    <string name="user_phone_details_title">Phone</string>
+    <string name="user_desc_details_title">Description</string>
+    <string name="user_desc_details_input">Manager of a small refrigaration repair and maintenance company in Vancouver. Available to reply offers via text or email.</string>
+    <string name="user_phone_details_input">+1-788-000-0000</string>
+    <string name="user_email_details_input">bobvance2gmail.com</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
