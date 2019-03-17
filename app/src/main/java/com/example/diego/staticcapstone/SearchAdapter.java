@@ -73,7 +73,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             public void onClick(View view) {
 
                 //load the fragment_Search_item here
-                Toast.makeText(context, "Click on"+ currentItem.getTech_name(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Click on "+ currentItem.getTech_name(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -86,6 +86,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     @Override
     public Filter getFilter() {
         return searchFilter;
+
     }
 
     private Filter searchFilter = new Filter() {
@@ -107,6 +108,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             results.values = filteredList;
 
             return results;
+
         }
 
         ;
@@ -116,6 +118,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             mExampleList.clear();
             mExampleList.addAll((List) results.values);
             notifyDataSetChanged();
+            
         }
     };
 }

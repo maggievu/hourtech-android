@@ -5,11 +5,11 @@ public class SearchItem {
     private int tech_pic;
     private String tech_name, tech_role, tech_desc;
 
-    public SearchItem(int pic, String text1, String text2, String text3) {
+    public SearchItem(int pic, String name, String role, String desc) {
         tech_pic = pic;
-        tech_name = text1;
-        tech_role = text2;
-        tech_desc = text3;
+        tech_name = name;
+        tech_role = role;
+        tech_desc = desc;
 
 
     }

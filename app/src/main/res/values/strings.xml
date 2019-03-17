@@ -20,5 +20,9 @@
     <string name="user_desc_details_input">Manager of a small refrigaration repair and maintenance company in Vancouver. Available to reply offers via text or email.</string>
     <string name="user_phone_details_input">+1-788-000-0000</string>
     <string name="user_email_details_input">bobvance2gmail.com</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_read_more">Read More</string>
+    <string name="activity_newRequest">Create a new job request</string>
 
 </resources>

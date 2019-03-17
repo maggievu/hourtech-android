@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="4dp">
+    android:layout_marginBottom="4dp"
+    app:cardElevation="0dp">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="157dp"
+        android:padding="@dimen/padding_screen">
 
         <TextView
             android:id="@+id/tech_name"
@@ -16,7 +19,9 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="-50dp"
             android:layout_toEndOf="@+id/tech_pic"
-            android:text="Name" />
+            android:text="Name"
+            android:textColor="@color/txt_blue"
+            android:textSize="@dimen/txt_input" />
 
         <TextView
             android:id="@+id/tech_role"
@@ -24,7 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tech_name"
             android:layout_alignParentStart="true"
-            android:text="Role" />
+            android:text="Role"
+            android:textColor="@color/txt_blue"
+            android:textSize="@dimen/txt_body" />
 
         <ImageView
             android:id="@+id/tech_pic"
@@ -36,13 +43,37 @@
 
         <TextView
             android:id="@+id/tech_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="235dp"
+            android:layout_height="41dp"
             android:layout_below="@+id/tech_pic"
             android:layout_alignParentStart="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="-50dp"
-            android:text="Desc" />
+            android:paddingStart="@dimen/padding_top_5"
+            android:text="Desc"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/txt_body" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="61dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="1dp"
+            app:srcCompat="@drawable/stars" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageView2"
+            android:layout_alignBottom="@+id/tech_pic"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="-41dp"
+            android:text="@string/btn_read_more"
+            android:textSize="@dimen/txt_body_small" />
 
 
     </RelativeLayout>

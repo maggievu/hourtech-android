@@ -1,5 +1,6 @@
 package com.example.diego.staticcapstone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,12 +9,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 
 public class Search extends MainActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,16 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         loadFragment(new SearchFragment());
 
-
     }
 
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
+
             return true;
         }
+
         return false;
     }
 
@@ -50,6 +53,7 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 break;
             case R.id.nav_activity:
                 Log.e("page is:", "activity");
+                fragment = new ActivityFragment();
 
                 break;
             case R.id.nav_search:

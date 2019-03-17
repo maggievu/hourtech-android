@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/padding_screen">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,8 +13,8 @@
 
         <ImageView
             android:id="@+id/profile_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/profile_pic"
+            android:layout_height="@dimen/profile_pic"
             app:srcCompat="@drawable/user_photo" />
 
         <TextView
@@ -21,8 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="0dp"
             android:layout_toEndOf="@+id/profile_pic"
-            android:text="@string/user_name" />
+            android:paddingLeft="@dimen/padding_left"
+            android:text="@string/user_name"
+            android:textColor="@color/txt_blue"
+            android:textSize="@dimen/txt_size_title"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/user_role"
@@ -31,58 +38,88 @@
             android:layout_below="@+id/user_name"
             android:layout_marginTop="-3dp"
             android:layout_toEndOf="@+id/profile_pic"
-            android:text="@string/user_role" />
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingTop="@dimen/padding_top_5"
+            android:text="@string/user_role"
+            android:textColor="@color/txt_blue"
+            android:textSize="@dimen/txt_position_size" />
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_top_5">
 
 
         <TextView
             android:id="@+id/contact_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/profile_title" />
+            android:paddingTop="@dimen/padding_top_5"
+            android:text="@string/profile_title"
+
+            android:textColor="@color/txt_blue"
+            android:textSize="@dimen/txt_body" />
 
         <TextView
             android:id="@+id/user_name_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_name_details_title" />
+            android:paddingTop="@dimen/padding_top_5"
+            android:text="@string/user_name_details_title"
+            android:textColor="@color/txt_black"
+
+            android:textSize="@dimen/txt_body" />
 
         <EditText
             android:id="@+id/user_name_details_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:enabled="false"
             android:hint="Name"
             android:inputType="textPersonName"
-            android:text="@string/user_name" />
+            android:text="@string/user_name"
+            android:textColor="@color/txt_blue"
+            android:textSize="@dimen/txt_input" />
 
 
         <TextView
             android:id="@+id/user_email_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_email_details_title" />
+            android:paddingTop="@dimen/padding_top_5"
+            android:text="@string/user_email_details_title"
+
+            android:textColor="@color/txt_black"
+
+            android:textSize="@dimen/txt_body" />
 
         <EditText
             android:id="@+id/user_email_details_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:enabled="false"
             android:hint="Email"
+
             android:inputType="textEmailAddress"
-            android:text="@string/user_email_details_input" />
+            android:text="@string/user_email_details_input"
+            android:textColor="@color/txt_blue"
+
+            android:textSize="@dimen/txt_input" />
 
         <TextView
             android:id="@+id/user_phone_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_phone_details_title" />
+            android:paddingTop="@dimen/padding_top_5"
+            android:text="@string/user_phone_details_title"
+            android:textColor="@color/txt_black"
+
+            android:textSize="@dimen/txt_body" />
 
 
         <EditText
@@ -90,24 +127,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:enabled="false"
             android:hint="Phone"
+
             android:inputType="phone"
-            android:text="@string/user_phone_details_input" />
+            android:text="@string/user_phone_details_input"
+            android:textColor="@color/txt_blue"
+
+            android:textSize="@dimen/txt_input" />
 
         <TextView
             android:id="@+id/user_desc_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_desc_details_title" />
+            android:paddingTop="@dimen/padding_top_5"
+            android:text="@string/user_desc_details_title"
+
+            android:textColor="@color/txt_black"
+
+            android:textSize="@dimen/txt_body" />
 
         <EditText
             android:id="@+id/user_desc_details_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:enabled="false"
             android:hint="Description"
+
             android:inputType="textMultiLine"
-            android:text="@string/user_desc_details_input" />
+            android:text="@string/user_desc_details_input"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/txt_input" />
 
 
     </LinearLayout>

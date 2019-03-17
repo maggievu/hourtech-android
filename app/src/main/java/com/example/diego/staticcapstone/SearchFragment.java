@@ -1,5 +1,6 @@
 package com.example.diego.staticcapstone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,11 +31,23 @@ public class SearchFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
         inflater.inflate(R.menu.search_menu, menu);
-
         MenuItem searchItem = menu.findItem(R.id.action_search);
+
         SearchView searchView = (SearchView) searchItem.getActionView();
 
+
+        Intent intent = getActivity().getIntent();
+        //to expand the search
+        searchView.setIconified(false);
+
+
+        String search = intent.getStringExtra("querySearch");
+        searchView.setQuery(search, false);
+        mAdapter.getFilter().filter(search);
+        searchView.clearFocus();
+//       Log.e("from home", "" + search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -45,7 +59,10 @@ public class SearchFragment extends Fragment {
                 return false;
             }
         });
+
+
     }
+
 
 
     @Override
@@ -59,9 +76,9 @@ public class SearchFragment extends Fragment {
 //        mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ArrayList<SearchItem> searchList = new ArrayList<>();
-        searchList.add(new SearchItem(R.drawable.ic_account, "Line 1", "Line 2", "Line 3"));
-        searchList.add(new SearchItem(R.drawable.ic_account_box, "Line 4", "Line 5", "Line 6"));
-        searchList.add(new SearchItem(R.drawable.ic_android, "Line 7", "Line 8", "Line 9"));
+        searchList.add(new SearchItem(R.drawable.ic_account, "Diego Rodrigues", "Designer", "Lorem ipsum dolor sit amet, photoshop consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et..."));
+        searchList.add(new SearchItem(R.drawable.ic_account_box, "Bob Vance", "Owner", "Robert \"Bob\" Vance, is a fictional character played by Bobby Ray Shafer in the television series The Office. Illustrator"));
+        searchList.add(new SearchItem(R.drawable.ic_android, "Person", "Something", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et..."));
 
 
         mRecyclerView.setHasFixedSize(true);
@@ -73,7 +90,6 @@ public class SearchFragment extends Fragment {
 
 
 //        return inflater.inflate(R.layout.fragment_search, null);\
-
 
         return rootView;
     }
