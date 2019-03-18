@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchItemFragment">
+    tools:context=".SearchItemFragment"
+    android:id="@+id/fragment_search_item">
 
     <TextView
         android:id="@+id/name_search_item"
@@ -14,38 +15,39 @@
         android:text="name" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/role_search_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/profile_search_item"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/user_photo" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/desc_search_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/contactbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/contact_btn" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/savebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/sav_fav_btn" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/reportbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/report_btn" />
 </LinearLayout>

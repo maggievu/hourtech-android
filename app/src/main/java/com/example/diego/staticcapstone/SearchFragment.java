@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class SearchFragment extends Fragment {
     //    private RecyclerView mRecyclerView;
     private SearchAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    EditText searchInput;
 
 
     public SearchFragment() {
@@ -45,7 +47,6 @@ public class SearchFragment extends Fragment {
         searchView.setQuery(search, false);
         mAdapter.getFilter().filter(search);
         searchView.clearFocus();
-//       Log.e("from home", "" + search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
             @Override
@@ -65,6 +66,8 @@ public class SearchFragment extends Fragment {
 
 
 
+
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -73,7 +76,6 @@ public class SearchFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
 
         RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-//        mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ArrayList<SearchItem> searchList = new ArrayList<>();
         searchList.add(new SearchItem(R.drawable.ic_account, "Diego Rodrigues", "Designer", "Lorem ipsum dolor sit amet, photoshop consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et..."));
@@ -82,14 +84,11 @@ public class SearchFragment extends Fragment {
 
 
         mRecyclerView.setHasFixedSize(true);
-//        mLayoutManager = new LinearLayoutManager(this);
         mAdapter = new SearchAdapter(searchList, getActivity().getApplicationContext());
 
-//        mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
 
-//        return inflater.inflate(R.layout.fragment_search, null);\
 
         return rootView;
     }

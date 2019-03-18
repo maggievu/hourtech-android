@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -68,6 +71,10 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 break;
             case R.id.nav_menu:
                 Log.e("page is:", "menu");
+
+//open the drawer here
+
+
 
                 break;
             default:

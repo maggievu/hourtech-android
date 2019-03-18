@@ -24,5 +24,16 @@
     <string name="btn_register">Register</string>
     <string name="btn_read_more">Read More</string>
     <string name="activity_newRequest">Create a new job request</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="register_login">Need to Register?</string>
+    <string name="or_login">OR</string>
+    <string name="forgot_pwd">Forgot Password?</string>
+    <string name="show_pwd">Show Password</string>
+    <string name="Password">Password</string>
+    <string name="email_login">Email</string>
+    <string name="hint_email">exampleemail@gmail.com</string>
+    <string name="contact_btn">Contact</string>
+    <string name="sav_fav_btn">Save to Favorites</string>
+    <string name="report_btn">Report</string>
 
 </resources>

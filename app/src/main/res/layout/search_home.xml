@@ -87,7 +87,8 @@
             android:layout_weight=".5"
             android:background="@color/txt_white"
             android:text="@string/btn_login"
-            android:textColor="@color/txt_blue" />
+            android:textColor="@color/txt_blue"
+            android:onClick="loginModal"/>
 
         <Button
             android:id="@+id/btn_register"

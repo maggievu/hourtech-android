@@ -1,6 +1,10 @@
 package com.example.diego.staticcapstone;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,10 +31,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     public static class SearchViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView mImageView;
-        public TextView mTextView1,mTextView2,mTextView3;
+        public TextView mTextView1, mTextView2, mTextView3;
 
         public RelativeLayout relativeLayout;
-
 
 
         public SearchViewHolder(View itemView) {
@@ -44,6 +47,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
         }
     }
+
     private Context context;
 
     public SearchAdapter(ArrayList<SearchItem> searchList, Context context) {
@@ -72,11 +76,30 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             @Override
             public void onClick(View view) {
 
+                Toast.makeText(context, "Click on " + currentItem.getTech_name(), Toast.LENGTH_SHORT).show();
+
+
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
                 //load the fragment_Search_item here
-                Toast.makeText(context, "Click on "+ currentItem.getTech_name(), Toast.LENGTH_SHORT).show();
+                Fragment myFragment = new SearchItemFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("name", currentItem.getTech_name());
+                bundle.putString("role", currentItem.getTech_role());
+                bundle.putString("desc", currentItem.getTech_desc());
+                bundle.putInt("pic", currentItem.getTech_pic());
+
+                myFragment.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
+
+
             }
+
+
         });
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -118,7 +141,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             mExampleList.clear();
             mExampleList.addAll((List) results.values);
             notifyDataSetChanged();
-            
+
         }
     };
 }
