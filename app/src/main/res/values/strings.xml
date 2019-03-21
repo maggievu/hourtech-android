@@ -36,4 +36,7 @@
     <string name="sav_fav_btn">Save to Favorites</string>
     <string name="report_btn">Report</string>
 
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
 </resources>

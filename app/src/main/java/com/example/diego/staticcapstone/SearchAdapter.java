@@ -100,7 +100,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     }
 
 
-
     @Override
     public int getItemCount() {
         return mExampleList.size();

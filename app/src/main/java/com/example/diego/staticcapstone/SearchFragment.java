@@ -21,7 +21,6 @@ import android.widget.EditText;
 import java.util.ArrayList;
 
 public class SearchFragment extends Fragment {
-    //    private RecyclerView mRecyclerView;
     private SearchAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     EditText searchInput;

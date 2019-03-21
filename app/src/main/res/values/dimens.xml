@@ -19,4 +19,7 @@
     <dimen name="txt_body">12sp</dimen>
     <dimen name="txt_body_small">11sp</dimen>
     <dimen name="txt_input">14sp</dimen>
+
+    <dimen name="nav_drawer_width">280dp</dimen>
+
 </resources>

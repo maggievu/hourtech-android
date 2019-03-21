@@ -1,20 +1,15 @@
 package com.example.diego.staticcapstone;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.widget.TextView;
-
-import java.util.ArrayList;
+import android.view.View;
+import android.widget.LinearLayout;
 
 
 public class Search extends MainActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -32,22 +27,23 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         loadFragment(new SearchFragment());
 
+        setUpDrawer();
+
     }
 
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
-
             return true;
         }
-
         return false;
     }
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.nav_profile:
@@ -72,10 +68,15 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
             case R.id.nav_menu:
                 Log.e("page is:", "menu");
 
-//open the drawer here
+                //open the drawer here
+                if (drawerLayout.isDrawerOpen(Gravity.END)) {
+                    item.setChecked(false);
+                    drawerLayout.closeDrawers();
 
-
-
+                } else {
+                    drawerLayout.openDrawer(Gravity.END);
+                    item.setChecked(true);
+                }
                 break;
             default:
                 break;
@@ -83,5 +84,12 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         return loadFragment(fragment);
     }
+
+    private void setUpDrawer() {
+
+        NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.nav_drwr_fragment);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+    }
+
 }
 
