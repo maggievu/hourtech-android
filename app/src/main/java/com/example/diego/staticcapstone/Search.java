@@ -8,9 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.LinearLayout;
-
 
 public class Search extends MainActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -24,10 +21,10 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         //define the initial select from the bottom bar
         bottomNavigationView.setSelectedItemId(R.id.nav_search);
+        setUpDrawer();
 
         loadFragment(new SearchFragment());
 
-        setUpDrawer();
 
     }
 
@@ -44,6 +41,8 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        LinearLayout nav_dwr = findViewById(R.id.nav_dwr);
+
         Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.nav_profile:
@@ -59,6 +58,7 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 Log.e("page is:", "search");
                 fragment = new SearchFragment();
 
+
                 break;
             case R.id.nav_messages:
                 Log.e("page is:", "messages");
@@ -67,6 +67,7 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 break;
             case R.id.nav_menu:
                 Log.e("page is:", "menu");
+
 
                 //open the drawer here
                 if (drawerLayout.isDrawerOpen(Gravity.END)) {
@@ -89,6 +90,7 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.nav_drwr_fragment);
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        Log.e("blabla","tomar no cu ");
     }
 
 }
