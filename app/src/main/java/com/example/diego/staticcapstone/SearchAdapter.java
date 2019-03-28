@@ -76,6 +76,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.mTextView2.setText(currentItem.getTech_role());
         holder.mTextView3.setText(currentItem.getTech_desc());
 
+        //click on the btn read more to load the details
 
         holder.readmorebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +98,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
             }
         });
-
+        //click on the card to load the details
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
 
             @Override

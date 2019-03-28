@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Gravity;
@@ -58,9 +59,8 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 bundle.putString("userName", userName);
                 bundle.putString("userPhoto", userPhoto);
                 fragment1.setArguments(bundle);
-//                Log.e("bundle is", "" + bundle);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment1).commit();
-
+                item.setChecked(true);
 //                fragment = new ProfileFragment();
                 break;
             case R.id.nav_activity:
@@ -84,14 +84,16 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
 
                 //open the drawer here
-                if (drawerLayout.isDrawerOpen(Gravity.END)) {
+
+                if (drawerLayout.isDrawerVisible(Gravity.END)) {
                     item.setChecked(false);
-                    drawerLayout.closeDrawers();
+                    drawerLayout.closeDrawer(GravityCompat.END);
 
                 } else {
-                    drawerLayout.openDrawer(Gravity.END);
+                    drawerLayout.openDrawer(GravityCompat.END);
                     item.setChecked(true);
                 }
+
                 break;
             default:
                 break;
@@ -101,7 +103,6 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
     }
 
     private void setUpDrawer() {
-
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.nav_drwr_fragment);
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
     }

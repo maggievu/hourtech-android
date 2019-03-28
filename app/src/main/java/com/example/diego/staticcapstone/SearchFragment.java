@@ -77,7 +77,7 @@ public class SearchFragment extends Fragment {
         RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ArrayList<SearchItem> searchList = new ArrayList<>();
-        searchList.add(new SearchItem(R.drawable.ic_account, "Diego Rodrigues", "Designer", "Lorem ipsum dolor sit amet, photoshop consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et..."));
+        searchList.add(new SearchItem(R.drawable.ic_account, "Maggie Vu", "Developer", "Highly motivated and passionate about Frontend development"));
         searchList.add(new SearchItem(R.drawable.ic_account_box, "Bob Vance", "Owner", "Robert \"Bob\" Vance, is a fictional character played by Bobby Ray Shafer in the television series The Office. Illustrator"));
         searchList.add(new SearchItem(R.drawable.ic_android, "Person", "Something", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et..."));
 

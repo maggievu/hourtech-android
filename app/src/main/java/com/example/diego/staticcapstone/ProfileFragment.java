@@ -11,13 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.auth.FirebaseUser;
 
 public class ProfileFragment extends Fragment {
+    private static final String TAG = "PROFILE";
 
     public ProfileFragment() {
 
@@ -41,9 +40,17 @@ public class ProfileFragment extends Fragment {
         TextView username = getView().findViewById(R.id.user_name);
         ImageView userphoto = getView().findViewById(R.id.profile_pic);
         Bundle bundle = this.getArguments();
-        username.setText(bundle.getString("userName"));
-        Glide.with(this).load(bundle.getString("userPhoto")).into(userphoto);
-        Log.e("being called twice", "" + bundle);
+
+        String usr = bundle.containsKey("userName") ? bundle.getString("userName") : "default";
+        if (usr != null) {
+            Log.e(TAG, "username is not null");
+            username.setText(bundle.getString("userName"));
+            Glide.with(this).load(bundle.getString("userPhoto")).into(userphoto);
+        } else {
+            Log.e(TAG, "it's null");
+
+        }
+
 
     }
 }

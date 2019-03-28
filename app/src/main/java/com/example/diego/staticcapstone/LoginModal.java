@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +42,7 @@ public class LoginModal extends BottomSheetDialogFragment {
     private FirebaseAuth mAuth;
     private ProgressDialog pDialog;
     private GoogleSignInClient mGoogleSignInClient;
-
+private EditText mEmail, mPassword;
 
     @Nullable
     @Override
@@ -86,6 +87,8 @@ public class LoginModal extends BottomSheetDialogFragment {
                 dismiss();
             }
         });
+
+
         return v;
     }
 
