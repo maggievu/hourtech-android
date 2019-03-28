@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -27,13 +28,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         void onItemClick(int position);
     }
 
-
     public static class SearchViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView mImageView;
         public TextView mTextView1, mTextView2, mTextView3;
 
         public RelativeLayout relativeLayout;
+        public Button readmorebtn;
 
 
         public SearchViewHolder(View itemView) {
@@ -43,6 +44,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             mTextView2 = itemView.findViewById(R.id.tech_role);
             mTextView3 = itemView.findViewById(R.id.tech_desc);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
+            readmorebtn = itemView.findViewById(R.id.readmorebtn);
 
 
         }
@@ -60,6 +62,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     public SearchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_item, parent, false);
         SearchViewHolder evh = new SearchViewHolder(v);
+
+
         return evh;
     }
 
@@ -72,12 +76,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.mTextView2.setText(currentItem.getTech_role());
         holder.mTextView3.setText(currentItem.getTech_desc());
 
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+
+        holder.readmorebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Toast.makeText(context, "Click on " + currentItem.getTech_name(), Toast.LENGTH_SHORT).show();
-
 
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
                 //load the fragment_Search_item here
@@ -92,6 +95,28 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 myFragment.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
 
+            }
+        });
+
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(context, "Click on " + currentItem.getTech_name(), Toast.LENGTH_SHORT).show();
+
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                //load the fragment_Search_item here
+                Fragment myFragment = new SearchItemFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("name", currentItem.getTech_name());
+                bundle.putString("role", currentItem.getTech_role());
+                bundle.putString("desc", currentItem.getTech_desc());
+                bundle.putInt("pic", currentItem.getTech_pic());
+
+                myFragment.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
 
             }
 

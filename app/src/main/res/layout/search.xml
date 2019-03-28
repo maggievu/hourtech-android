@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="@dimen/padding_top"
-    tools:context=".Search">
+    tools:context=".Search"
+    android:id="@+id/search">
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"

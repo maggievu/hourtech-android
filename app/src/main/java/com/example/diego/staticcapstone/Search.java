@@ -1,5 +1,6 @@
 package com.example.diego.staticcapstone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -25,7 +26,6 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         loadFragment(new SearchFragment());
 
-
     }
 
     private boolean loadFragment(Fragment fragment) {
@@ -47,7 +47,21 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
         switch (item.getItemId()) {
             case R.id.nav_profile:
                 Log.e("page is:", "profile");
-                fragment = new ProfileFragment();
+
+
+                //TODO: get the photo from the login modal and send to the profile fragment.
+                Intent intent = getIntent();
+                String userName = intent.getStringExtra("userName");
+                String userPhoto = intent.getStringExtra("userPhoto");
+                Fragment fragment1 = new ProfileFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("userName", userName);
+                bundle.putString("userPhoto", userPhoto);
+                fragment1.setArguments(bundle);
+//                Log.e("bundle is", "" + bundle);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment1).commit();
+
+//                fragment = new ProfileFragment();
                 break;
             case R.id.nav_activity:
                 Log.e("page is:", "activity");
@@ -90,7 +104,6 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.nav_drwr_fragment);
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        Log.e("blabla","tomar no cu ");
     }
 
 }

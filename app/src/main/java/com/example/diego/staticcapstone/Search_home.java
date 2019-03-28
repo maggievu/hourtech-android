@@ -50,7 +50,6 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
             startActivity(intent);
         }
 
-
     }
 
 

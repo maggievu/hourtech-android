@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "825082282245",
+    "firebase_url": "https://hourtech-b86d3.firebaseio.com",
+    "project_id": "hourtech-b86d3",
+    "storage_bucket": "hourtech-b86d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825082282245:android:736296dd3b4a5e79",
+        "android_client_info": {
+          "package_name": "com.example.diego.staticcapstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825082282245-9t9n4k96vmiffekfv66cm61a0rqmdo8r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diego.staticcapstone",
+            "certificate_hash": "01ddd36df329255c2d55b1113c044884e1fbc2ae"
+          }
+        },
+        {
+          "client_id": "825082282245-s0q4bo1sjv7ng6klepc82snkjverv8u3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNN7_sahSCA_PN_OtSYwtRc8ClpnzN0kM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825082282245-s0q4bo1sjv7ng6klepc82snkjverv8u3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "825082282245-gsv5bt113e2pi30hhrmnaq4pae2vigel.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hourtech.HourTech"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
