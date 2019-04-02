@@ -94,6 +94,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 bundle.putInt("pic", currentItem.getTech_pic());
 
                 myFragment.setArguments(bundle);
+
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
 
             }
@@ -147,7 +148,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (SearchItem item : mExampleListFull) {
-                    if (item.getTech_desc().toLowerCase().contains(filterPattern)) {
+                    // change the item.getXXXX to search (gettechrole / getdesc / getname/ etc)
+                    if (item.getTech_role().toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
                 }

@@ -9,7 +9,8 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="157dp"
+        android:layout_height="200dp"
+        android:background="@drawable/border_search"
         android:padding="@dimen/padding_screen">
 
         <TextView
@@ -18,10 +19,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="-50dp"
+            android:layout_marginTop="0dp"
             android:layout_toEndOf="@+id/tech_pic"
             android:text="Name"
             android:textColor="@color/txt_blue"
-            android:textSize="@dimen/txt_input" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tech_role"
@@ -29,6 +32,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tech_name"
             android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
             android:text="Role"
             android:textColor="@color/txt_blue"
             android:textSize="@dimen/txt_body" />
@@ -39,23 +44,24 @@
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="35dp" />
+            android:layout_marginTop="60dp" />
 
         <TextView
             android:id="@+id/tech_desc"
-            android:layout_width="235dp"
-            android:layout_height="41dp"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
             android:layout_below="@+id/tech_pic"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="-50dp"
+            android:layout_marginEnd="0dp"
             android:paddingStart="@dimen/padding_top_5"
             android:text="Desc"
             android:textColor="@color/txt_black"
             android:textSize="@dimen/txt_body" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ratingsstart"
             android:layout_width="61dp"
             android:layout_height="22dp"
             android:layout_alignParentTop="true"
@@ -66,15 +72,55 @@
 
         <Button
             android:id="@+id/readmorebtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/imageView2"
+            android:layout_width="116dp"
+            android:layout_height="30dp"
+            android:layout_alignEnd="@+id/ratingsstart"
             android:layout_alignBottom="@+id/tech_pic"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="-41dp"
-            android:text="@string/btn_read_more"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="-47dp"
+            android:background="@drawable/readmore_btn"
             android:textSize="@dimen/txt_body_small" />
 
+        <ImageView
+            android:id="@+id/ppt_skill"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+
+            app:srcCompat="@drawable/ppt" />
+
+        <ImageView
+            android:id="@+id/ae_skill"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ae" />
+
+        <ImageView
+            android:id="@+id/ai_skill"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ai" />
+
+        <ImageView
+            android:id="@+id/ps_skill"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ps" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>

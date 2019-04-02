@@ -1,29 +1,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@android:color/white"
     android:orientation="vertical"
-    android:id="@+id/nav_drawer"
-    tools:context=".NavigationDrawerFragment">
+    tools:context=".NavigationDrawerFragment"
+    android:background="@drawable/border_menu">
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="@string/menu_title" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
+
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
@@ -35,12 +37,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
+
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="logout" />
-
 
 
 </LinearLayout>

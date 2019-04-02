@@ -52,7 +52,7 @@ private EditText mEmail, mPassword;
 
         Button buttonConfirm = v.findViewById(R.id.btnConfirm);
         Button buttonGoogle = v.findViewById(R.id.btnGoogleLogin);
-        Button btnLogout = v.findViewById(R.id.btnLogout);
+//        Button btnLogout = v.findViewById(R.id.btnLogout);
 
         pDialog = new ProgressDialog(getActivity());
 
@@ -74,19 +74,19 @@ private EditText mEmail, mPassword;
             }
         });
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();
-            }
-        });
-        buttonConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mListener.onButtonClicked("confirm was clicked. implements the login flow later");
-                dismiss();
-            }
-        });
+//        btnLogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                signOut();
+//            }
+//        });
+//        buttonConfirm.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mListener.onButtonClicked("confirm was clicked. implements the login flow later");
+//                dismiss();
+//            }
+//        });
 
 
         return v;
@@ -154,7 +154,7 @@ private EditText mEmail, mPassword;
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();
         TextView displayName = getActivity().findViewById(R.id.displayName);
-        Button btnLogout = getActivity().findViewById(R.id.btnLogout);
+//        Button btnLogout = getActivity().findViewById(R.id.btnLogout);
 
         //ImageView profileImage = getActivity().findViewById(R.id.profilePic);
         if (user != null) {

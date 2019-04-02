@@ -1,53 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:id="@+id/fragment_search_item"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchItemFragment"
-    android:id="@+id/fragment_search_item">
+    android:orientation="vertical"
+    android:paddingBottom="40dp"
+    tools:context=".SearchItemFragment">
 
     <TextView
         android:id="@+id/name_search_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="name" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:text="name"
+        android:textColor="@color/txt_blue"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/role_search_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_width="293dp"
+        android:layout_height="18dp"
+        android:layout_below="@+id/name_search_item"
+        android:layout_alignStart="@+id/name_search_item"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="0dp"
+        android:text="TextView"
+        android:textColor="@color/txt_blue"
+        android:textSize="@dimen/txt_input"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="40dp" />
+
+    <ImageView
+        android:id="@+id/ratingsstartsearch"
+        android:layout_width="61dp"
+        android:layout_height="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="0dp"
+        app:srcCompat="@drawable/stars"
+        tools:layout_editor_absoluteX="314dp"
+        tools:layout_editor_absoluteY="40dp" />
 
     <ImageView
         android:id="@+id/profile_search_item"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignStart="@+id/name_search_item"
+        android:layout_alignBottom="@+id/name_search_item"
         android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/user_photo" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-86dp"
+        app:srcCompat="@drawable/user_photo"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="73dp" />
+
+    <ImageView
+        android:id="@+id/ppt_skill"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="130dp"
+        app:srcCompat="@drawable/ppt" />
+
+    <ImageView
+        android:id="@+id/ae_skill"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/tech_desc"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="190dp"
+        app:srcCompat="@drawable/ae" />
+
+    <ImageView
+        android:id="@+id/ai_skill"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/tech_desc"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="170dp"
+        app:srcCompat="@drawable/ai" />
+
+    <ImageView
+        android:id="@+id/ps_skill"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/tech_desc"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="150dp"
+        app:srcCompat="@drawable/ps" />
 
     <TextView
         android:id="@+id/desc_search_item"
-        android:layout_width="match_parent"
+        android:layout_width="293dp"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="0dp"
+        android:minHeight="100dp"
+        android:paddingStart="10dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+
+    <TextView
+        android:id="@+id/ps_skill_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ppt_skill"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="-20dp"
+        android:text="@string/ps_txt"
+        android:textSize="@dimen/txt_body_small" />
+
+    <TextView
+        android:id="@+id/ppt_skill_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ppt_skill"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/ppt_txt"
+        android:textSize="@dimen/txt_body_small" />
+
+    <TextView
+        android:id="@+id/ae_skill_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ppt_skill"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="-62dp"
+        android:text="@string/ae_txt"
+        android:textSize="@dimen/txt_body_small" />
+
+    <TextView
+        android:id="@+id/ai_skill_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ppt_skill"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="-42dp"
+        android:text="@string/ai_txt"
+        android:textSize="@dimen/txt_body_small" />
+
+    <TextView
+        android:id="@+id/previous_works"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc_search_item"
+        android:layout_alignStart="@+id/name_search_item"
+
+        android:layout_marginTop="10dp"
+        android:text="@string/previous_work" />
 
     <Button
         android:id="@+id/contactbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/contact_btn" />
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/previous_works"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp"
+        android:background="@drawable/contact_btn" />
 
     <Button
         android:id="@+id/savebtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sav_fav_btn" />
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/contactbtn"
+
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/savefav_btn" />
 
     <Button
         android:id="@+id/reportbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/report_btn" />
-</LinearLayout>
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/savebtn"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/report_btn" />
+</RelativeLayout>

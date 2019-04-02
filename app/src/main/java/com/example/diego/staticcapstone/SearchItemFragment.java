@@ -26,7 +26,6 @@ public class SearchItemFragment extends Fragment {
     public void onStart() {
         super.onStart();
         View view = getView();
-
         String nameString = getArguments().getString("name");
         String roleString = getArguments().getString("role");
         String descString = getArguments().getString("desc");

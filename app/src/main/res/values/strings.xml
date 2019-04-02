@@ -38,5 +38,12 @@
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="logintitle">Login</string>
+    <string name="ppt_txt">Powerpoint</string>
+    <string name="ps_txt">Photoshop</string>
+    <string name="ai_txt">Illustrator</string>
+    <string name="ae_txt">After Effects</string>
+    <string name="previous_work">Previous Works</string>
+    <string name="menu_title">Menu</string>
 
 </resources>
