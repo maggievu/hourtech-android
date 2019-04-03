@@ -22,7 +22,8 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
         searchInput = findViewById(R.id.searchInput);
         searchBtn = findViewById(R.id.searchBtn);
         btn_login = findViewById(R.id.btn_login);
-        searchInput.setText("");
+//TODO: uncoment this line bellow when compile to production
+        //        searchInput.setText("");
 
 
     }
@@ -30,7 +31,9 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
     @Override
     protected void onResume() {
         super.onResume();
-        searchInput.setText("");
+        //TODO: uncoment this line bellow when compile to production
+
+//        searchInput.setText("");
         searchInput.clearFocus();
     }
  public void loginModal(View view){

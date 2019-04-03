@@ -8,12 +8,29 @@
     android:orientation="vertical"
     android:paddingBottom="40dp"
     tools:context=".SearchItemFragment">
+    <!--android:background="@drawable/bg_fragment_search_item"-->
+
+    android:src="@drawable/bg_fragment_search_item"
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|center">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/search_item_fragment" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/name_search_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:layout_marginTop="10dp"
         android:text="name"
         android:textColor="@color/txt_blue"
@@ -22,13 +39,13 @@
 
     <TextView
         android:id="@+id/role_search_item"
-        android:layout_width="293dp"
-        android:layout_height="18dp"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/name_search_item"
         android:layout_alignStart="@+id/name_search_item"
-        android:layout_marginStart="86dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textColor="@color/txt_blue"
         android:textSize="@dimen/txt_input"
@@ -42,11 +59,22 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginEnd="16dp"
         app:srcCompat="@drawable/stars"
         tools:layout_editor_absoluteX="314dp"
         tools:layout_editor_absoluteY="40dp" />
 
+
+    <TextView
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingsstartsearch"
+        android:layout_alignEnd="@+id/ratingsstartsearch"
+        android:layout_marginTop="11dp"
+        android:text="@string/reviews"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/txt_blue"
+        android:textSize="@dimen/txt_body" />
     <ImageView
         android:id="@+id/profile_search_item"
         android:layout_width="70dp"
@@ -54,145 +82,187 @@
         android:layout_alignStart="@+id/name_search_item"
         android:layout_alignBottom="@+id/name_search_item"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="-86dp"
         app:srcCompat="@drawable/user_photo"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="73dp" />
 
-    <ImageView
-        android:id="@+id/ppt_skill"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="130dp"
-        app:srcCompat="@drawable/ppt" />
-
-    <ImageView
-        android:id="@+id/ae_skill"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_below="@+id/tech_desc"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="190dp"
-        app:srcCompat="@drawable/ae" />
-
-    <ImageView
-        android:id="@+id/ai_skill"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_below="@+id/tech_desc"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="170dp"
-        app:srcCompat="@drawable/ai" />
-
-    <ImageView
-        android:id="@+id/ps_skill"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_below="@+id/tech_desc"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="150dp"
-        app:srcCompat="@drawable/ps" />
-
-    <TextView
-        android:id="@+id/desc_search_item"
-        android:layout_width="293dp"
+    <LinearLayout
+        android:id="@+id/skills_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="0dp"
+        android:layout_below="@+id/profile_search_item"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="86dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:orientation="horizontal"
+        android:background="@drawable/border_desc_search_item"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ppt_skill_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ppt_skill"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-1dp"
+                android:text="@string/ppt_txt"
+                android:textSize="@dimen/txt_body_small" />
+
+            <ImageView
+                android:id="@+id/ae_skill"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_below="@+id/tech_desc"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="70dp"
+                app:srcCompat="@drawable/ae" />
+
+            <ImageView
+                android:id="@+id/ppt_skill"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/ppt" />
+
+            <TextView
+                android:id="@+id/ae_skill_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ppt_skill"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-58dp"
+                android:text="@string/ae_txt"
+                android:textSize="@dimen/txt_body_small" />
+
+            <ImageView
+                android:id="@+id/ai_skill"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_below="@+id/tech_desc"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="50dp"
+                app:srcCompat="@drawable/ai" />
+
+            <ImageView
+                android:id="@+id/ps_skill"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_below="@+id/tech_desc"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="30dp"
+                app:srcCompat="@drawable/ps" />
+
+            <TextView
+                android:id="@+id/ps_skill_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ppt_skill"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-20dp"
+                android:text="@string/ps_txt"
+                android:textSize="@dimen/txt_body_small" />
+
+            <TextView
+                android:id="@+id/ai_skill_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ppt_skill"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-39dp"
+                android:text="@string/ai_txt"
+                android:textSize="@dimen/txt_body_small" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/desc_search_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:minHeight="100dp"
+                android:text="TextView"
+                tools:layout_editor_absoluteX="110dp"
+                tools:layout_editor_absoluteY="74dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/previous_works_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/skills_container"
+        android:layout_alignParentStart="true"
         android:minHeight="100dp"
-        android:paddingStart="10dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="74dp" />
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
+        <TextView
+            android:id="@+id/previous_works"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/skills_container"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="7dp"
+            android:text="@string/previous_work" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/ps_skill_txt"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ppt_skill"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="-20dp"
-        android:text="@string/ps_txt"
-        android:textSize="@dimen/txt_body_small" />
+        android:layout_below="@id/previous_works_container"
+        android:layout_alignParentStart="true"
 
-    <TextView
-        android:id="@+id/ppt_skill_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ppt_skill"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="0dp"
-        android:text="@string/ppt_txt"
-        android:textSize="@dimen/txt_body_small" />
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="68dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/ae_skill_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ppt_skill"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="-62dp"
-        android:text="@string/ae_txt"
-        android:textSize="@dimen/txt_body_small" />
+        <Button
+            android:id="@+id/contactbtn"
+            android:layout_width="242dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/contact_btn" />
 
-    <TextView
-        android:id="@+id/ai_skill_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ppt_skill"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="-42dp"
-        android:text="@string/ai_txt"
-        android:textSize="@dimen/txt_body_small" />
+        <Button
+            android:id="@+id/savebtn"
+            android:layout_width="242dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
 
-    <TextView
-        android:id="@+id/previous_works"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/desc_search_item"
-        android:layout_alignStart="@+id/name_search_item"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/savefav_btn" />
 
-        android:layout_marginTop="10dp"
-        android:text="@string/previous_work" />
+        <Button
+            android:id="@+id/reportbtn"
+            android:layout_width="242dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
 
-    <Button
-        android:id="@+id/contactbtn"
-        android:layout_width="242dp"
-        android:layout_height="35dp"
-        android:layout_below="@+id/previous_works"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="78dp"
-        android:background="@drawable/contact_btn" />
+            android:background="@drawable/report_btn" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/savebtn"
-        android:layout_width="242dp"
-        android:layout_height="35dp"
-        android:layout_below="@+id/contactbtn"
 
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/savefav_btn" />
-
-    <Button
-        android:id="@+id/reportbtn"
-        android:layout_width="242dp"
-        android:layout_height="35dp"
-        android:layout_below="@+id/savebtn"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/report_btn" />
 </RelativeLayout>

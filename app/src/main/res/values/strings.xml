@@ -45,5 +45,10 @@
     <string name="ae_txt">After Effects</string>
     <string name="previous_work">Previous Works</string>
     <string name="menu_title">Menu</string>
+    <string name="btn_settings">Settings</string>
+    <string name="location_btn">Location</string>
+    <string name="about_btn">About</string>
+    <string name="terms_btn"><![CDATA[Terms & Policy]]></string>
+    <string name="reviews">Reviews</string>
 
 </resources>

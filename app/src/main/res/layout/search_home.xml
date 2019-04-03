@@ -44,6 +44,7 @@
             android:text="@string/text_intro_search"
             android:textColor="@color/txt_white" />
 
+        <!--TODO: remove the text when compile to production -->
 
         <EditText
             android:id="@+id/searchInput"
@@ -55,9 +56,9 @@
             android:background="@color/txt_white"
             android:hint="@string/searchInput"
             android:padding="@dimen/padding_input"
+            android:text="web"
             android:textColor="@android:color/black"
             android:textSize="@dimen/txt_input" />
-
         <ImageButton
             android:id="@+id/searchBtn"
             android:layout_width="165dp"
