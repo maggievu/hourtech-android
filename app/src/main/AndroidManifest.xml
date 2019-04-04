@@ -15,7 +15,8 @@
         <activity
             android:name=".Search_home"
             android:noHistory="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,6 +27,7 @@
             android:name=".Search"
             android:screenOrientation="portrait" />
         <activity android:name=".ProfileFragment" />
+
 
     </application>
 

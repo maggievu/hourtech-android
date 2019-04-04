@@ -9,6 +9,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +42,12 @@ public class NavigationDrawerFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_nav_drawer, container, false);
         Log.e("drawer is", "loading");
 
+        Button btnSettings = view.findViewById(R.id.settings_btn);
+        Button btnLocation = view.findViewById(R.id.location_btn);
+        Button btnAbout = view.findViewById(R.id.about_btn);
         Button btnLogout = view.findViewById(R.id.btn_logout);
+        Button btnTerms = view.findViewById(R.id.terms_btn);
+
         mAuth = FirebaseAuth.getInstance();
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +58,30 @@ public class NavigationDrawerFragment extends Fragment {
 
             }
         });
+
+
+        //create the icons on the drawer buttons
+        Spannable btnSettingsTxt = new SpannableString("   Settings");
+        Spannable btnLocationTxt = new SpannableString("   Location");
+        Spannable btnAboutTxt = new SpannableString("   About");
+        Spannable btnLogoutTxt = new SpannableString("   Logout");
+        Spannable btnTermsTxt = new SpannableString("   Terms & Policy");
+
+
+        btnSettingsTxt.setSpan(new ImageSpan(getActivity(), R.drawable.settings_icon, ImageSpan.ALIGN_BASELINE), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        btnLocationTxt.setSpan(new ImageSpan(getActivity(), R.drawable.location_icon, ImageSpan.ALIGN_BASELINE), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        btnAboutTxt.setSpan(new ImageSpan(getActivity(), R.drawable.about_icon, ImageSpan.ALIGN_BASELINE), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        btnLogoutTxt.setSpan(new ImageSpan(getActivity(), R.drawable.logout_icon, ImageSpan.ALIGN_BASELINE), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        btnTermsTxt.setSpan(new ImageSpan(getActivity(), R.drawable.terms_icon, ImageSpan.ALIGN_BASELINE), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        btnSettings.setText(btnSettingsTxt);
+        btnLocation.setText(btnLocationTxt);
+        btnAbout.setText(btnAboutTxt);
+        btnLogout.setText(btnLogoutTxt);
+        btnTerms.setText(btnTermsTxt);
+
+
+
         return view;
 
 

@@ -24,6 +24,7 @@ public class SearchFragment extends Fragment {
     private SearchAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     EditText searchInput;
+    private static final String TAG = "Search";
 
 
     public SearchFragment() {
@@ -38,7 +39,8 @@ public class SearchFragment extends Fragment {
 
 
         Intent intent = getActivity().getIntent();
-        //to expand the search
+
+        //to expand the search with the string from home
         searchView.setIconified(false);
 
 
@@ -74,14 +76,14 @@ public class SearchFragment extends Fragment {
         RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ArrayList<SearchItem> searchList = new ArrayList<>();
-        searchList.add(new SearchItem(R.drawable.ic_account, "Maggie Vu", "Developer", "Highly motivated and passionate about Frontend development"));
-        searchList.add(new SearchItem(R.drawable.ic_account_box, "Diego Rodrigues", "Developer", "Bachelor in Graphic Design and experienced in responsive web design. Skillful, hard-working, Post-degree at Langara."));
-        searchList.add(new SearchItem(R.drawable.ic_android, "Noppawit Hansompob", "Developer", "Computer Science graduate. Experienced in Salesforce. Hardworking and passionate about what he does. In pathway to become full-stack web developer"));
-        searchList.add(new SearchItem(R.drawable.ic_account, "Andra Iskandar", "Developer", "Bachelor’s in Information Systems. Solid background in QA testing and unit testing."));
-        searchList.add(new SearchItem(R.drawable.ic_menu_camera, "Julia Stanovsky", "Designer", "With a bachelor’s degree of fine arts and animation, Julia enjoys creating beautiful and practical design solutions in her projects. She carries her sketch book and color pencils all the time so that she’s always ready to create great UX and UI design."));
-        searchList.add(new SearchItem(R.drawable.ic_android, "Emily Kepler", "Graphic Designer", "Graphic Designer with 2+ years of experience in the management of the complete design process, from conceptualization to delivery."));
-        searchList.add(new SearchItem(R.drawable.ic_menu_manage, "John Smith", "Web Designer", "Experienced UX designer. Mobile and website development including responsiveness and compatibility on modern devices."));
-        searchList.add(new SearchItem(R.drawable.ic_account, "Tommy Lu", "Database Developer", "Diligent and productive database developer with a high level of work integrity. Experience developing server-side database management system apps on multiple platforms."));
+        searchList.add(new SearchItem(R.drawable.maggie, "Maggie Vu", "Developer", "Highly motivated and passionate about Frontend development"));
+        searchList.add(new SearchItem(R.drawable.diego, "Diego Rodrigues", "Developer", "Bachelor in Graphic Design and experienced in responsive web design. Skillful, hard-working, Post-degree at Langara."));
+        searchList.add(new SearchItem(R.drawable.ta, "Noppawit Hansompob", "Developer", "Computer Science graduate. Experienced in Salesforce. Hardworking and passionate about what he does. In pathway to become full-stack web developer"));
+        searchList.add(new SearchItem(R.drawable.andra, "Andra Iskandar", "Developer", "Bachelor’s in Information Systems. Solid background in QA testing and unit testing."));
+        searchList.add(new SearchItem(R.drawable.julia, "Julia Stanovsky", "Designer", "With a bachelor’s degree of fine arts and animation, Julia enjoys creating beautiful and practical design solutions in her projects. She carries her sketch book and color pencils all the time so that she’s always ready to create great UX and UI design."));
+        searchList.add(new SearchItem(R.drawable.emily, "Emily Kepler", "Graphic Designer", "Graphic Designer with 2+ years of experience in the management of the complete design process, from conceptualization to delivery."));
+        searchList.add(new SearchItem(R.drawable.user_photo, "John Smith", "Web Designer", "Experienced UX designer. Mobile and website development including responsiveness and compatibility on modern devices."));
+        searchList.add(new SearchItem(R.drawable.megan, "Megan Burns", "Database Developer", "Diligent and productive database developer with a high level of work integrity. Experience developing server-side database management system apps on multiple platforms."));
 
         mRecyclerView.setHasFixedSize(true);
         mAdapter = new SearchAdapter(searchList, getActivity().getApplicationContext());
@@ -91,4 +93,9 @@ public class SearchFragment extends Fragment {
 
         return rootView;
     }
+
+
+
+
+
 }

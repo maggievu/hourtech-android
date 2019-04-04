@@ -2,6 +2,8 @@ package com.example.diego.staticcapstone;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 
 public class Search_home extends MainActivity implements LoginModal.LoginListener {
 
+    private static final String TAG = "Search Home";
 
     EditText searchInput;
     ImageButton searchBtn;
@@ -26,6 +29,21 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
         //        searchInput.setText("");
 
 
+
+        //TODO: implements the enter key to submit the search
+        searchInput.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (i == KeyEvent.KEYCODE_ENTER)) {
+                    Log.e(TAG, "focus no input");
+                    onButtonClicked("focus no input");
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -35,12 +53,26 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
 
 //        searchInput.setText("");
         searchInput.clearFocus();
-    }
- public void loginModal(View view){
-     LoginModal loginmodal = new LoginModal();
-     loginmodal.show(getSupportFragmentManager(), "login");
+        searchInput.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (i == KeyEvent.KEYCODE_ENTER)) {
+                    Log.e(TAG, "focus no input");
+                    onButtonClicked("focus no input");
+                    return true;
+                }
+                return false;
+            }
+        });
 
- }
+    }
+
+    public void loginModal(View view) {
+        LoginModal loginmodal = new LoginModal();
+        loginmodal.show(getSupportFragmentManager(), "login");
+
+    }
+
     public void afterLogin(View view) {
 
         String search = searchInput.getText().toString();
@@ -52,6 +84,7 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
             intent.putExtra("querySearch", search);
             startActivity(intent);
         }
+
 
     }
 

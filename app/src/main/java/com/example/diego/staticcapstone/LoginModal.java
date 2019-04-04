@@ -153,7 +153,7 @@ private EditText mEmail, mPassword;
 
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();
-        TextView displayName = getActivity().findViewById(R.id.displayName);
+//        TextView displayName = getActivity().findViewById(R.id.displayName);
 //        Button btnLogout = getActivity().findViewById(R.id.btnLogout);
 
         //ImageView profileImage = getActivity().findViewById(R.id.profilePic);

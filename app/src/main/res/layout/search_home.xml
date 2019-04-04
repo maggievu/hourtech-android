@@ -31,8 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/padding_top"
+
             app:srcCompat="@drawable/ic_ht_logo_white_vertical" />
 
         <TextView
@@ -54,10 +53,14 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/padding_top"
             android:background="@color/txt_white"
+            android:drawableRight="@drawable/ic_search"
             android:hint="@string/searchInput"
             android:padding="@dimen/padding_input"
+            android:paddingRight="20dp"
+
             android:text="web"
             android:textColor="@android:color/black"
+
             android:textSize="@dimen/txt_input" />
         <ImageButton
             android:id="@+id/searchBtn"

@@ -62,9 +62,9 @@
         android:layout_above="@+id/terms_btn"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
         android:layout_marginBottom="59dp"
         android:background="@drawable/border_btn_drawer"
+        android:gravity="center"
         android:text="logout"
         android:textColor="@color/bg_white" />
 

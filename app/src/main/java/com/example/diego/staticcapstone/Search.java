@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 
 public class Search extends MainActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "Search";
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +102,8 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         return loadFragment(fragment);
     }
+
+
 
     private void setUpDrawer() {
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.nav_drwr_fragment);
