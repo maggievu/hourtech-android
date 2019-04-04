@@ -1,41 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_marginBottom="4dp"
+    app:cardElevation="0dp">
 
-
-    <android.support.v7.widget.CardView
-        android:layout_margin="@dimen/cardview_compat_inset_shadow"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="200dp"
+        android:background="@drawable/border_search"
+        android:padding="@dimen/padding_screen">
 
-
-        <LinearLayout
-            android:id="@+id/searchLayout"
-            android:padding="@dimen/text_margin"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tech_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-50dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/tech_pic"
+            android:text="Name"
+            android:textColor="@color/txt_blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/usernameLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="username"/>
+        <TextView
+            android:id="@+id/tech_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tech_name"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:text="Role"
+            android:textColor="@color/txt_blue"
+            android:textSize="@dimen/txt_body" />
 
-            <TextView
-                android:id="@+id/nameLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="name"/>
-            <TextView
-                android:id="@+id/emailLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="email"/>
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+        <ImageView
+            android:id="@+id/tech_pic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="60dp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tech_desc"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_below="@+id/tech_pic"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginEnd="0dp"
+            android:paddingStart="@dimen/padding_top_5"
+            android:text="Desc"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/txt_body" />
+
+        <ImageView
+            android:id="@+id/ratingsstart"
+            android:layout_width="61dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="1dp"
+            app:srcCompat="@drawable/stars" />
+
+        <Button
+            android:id="@+id/readmorebtn"
+            android:layout_width="116dp"
+            android:layout_height="30dp"
+            android:layout_alignEnd="@+id/ratingsstart"
+            android:layout_alignBottom="@+id/tech_pic"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="-47dp"
+            android:background="@drawable/readmore_btn"
+            android:textSize="@dimen/txt_body_small" />
+
+        <ImageView
+            android:id="@+id/ppt_skill"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+
+            app:srcCompat="@drawable/ppt" />
+
+        <ImageView
+            android:id="@+id/ae_skill"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ae" />
+
+        <ImageView
+            android:id="@+id/ai_skill"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ai" />
+
+        <ImageView
+            android:id="@+id/ps_skill"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ps" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

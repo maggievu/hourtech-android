@@ -1,6 +1,54 @@
 <resources>
-    <string name="app_name">SearchMongoDB</string>
+    <string name="app_name">HourTech</string>
+    <string name="searchInput">Type to search</string>
+    <string name="text_intro_search">Enter a search word, like a skill you would like help with, or a job offer you would like to find.</string>
+    <string name="searchButton">Search</string>
+    <string name="title_activity_drawer">Drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="user_name">Bob Vance</string>
+    <string name="user_role">Manager</string>
+    <string name="profile_title">Contact Information</string>
+    <string name="user_name_details_title">Name</string>
+    <string name="user_email_details_title">Email</string>
+    <string name="user_phone_details_title">Phone</string>
+    <string name="user_desc_details_title">Description</string>
+    <string name="user_desc_details_input">Manager of a small refrigaration repair and maintenance company in Vancouver. Available to reply offers via text or email.</string>
+    <string name="user_phone_details_input">+1-788-000-0000</string>
+    <string name="user_email_details_input">bobvance2gmail.com</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_read_more">Read More</string>
+    <string name="activity_newRequest">Create a new job request</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="register_login">Need to Register?</string>
+    <string name="or_login">OR</string>
+    <string name="forgot_pwd">Forgot Password?</string>
+    <string name="show_pwd">Show Password</string>
+    <string name="Password">Password</string>
+    <string name="email_login">Email</string>
+    <string name="hint_email">exampleemail@gmail.com</string>
+    <string name="contact_btn">Contact</string>
+    <string name="sav_fav_btn">Save to Favorites</string>
+    <string name="report_btn">Report</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="logintitle">Login</string>
+    <string name="ppt_txt">Powerpoint</string>
+    <string name="ps_txt">Photoshop</string>
+    <string name="ai_txt">Illustrator</string>
+    <string name="ae_txt">After Effects</string>
+    <string name="previous_work">Previous Works</string>
+    <string name="menu_title">Menu</string>
+    <string name="btn_settings">Settings</string>
+    <string name="location_btn">Location</string>
+    <string name="about_btn">About</string>
+    <string name="terms_btn"><![CDATA[Terms & Policy]]></string>
+    <string name="reviews">Reviews</string>
+
 </resources>
