@@ -8,23 +8,18 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialogFragment;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -35,19 +30,19 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
-public class LoginModal extends BottomSheetDialogFragment {
-    private LoginListener mListener;
-    private static final String TAG = "LoginModal";
+public class RegisterModal extends BottomSheetDialogFragment {
+    private RegisterListener mListener;
+    private static final String TAG = "RegisterModal";
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth mAuth;
     private ProgressDialog pDialog;
     private GoogleSignInClient mGoogleSignInClient;
-private EditText mEmail, mPassword;
+    private EditText mEmail, mPassword;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.login, container, false);
+        View v = inflater.inflate(R.layout.register, container, false);
 
 
         Button buttonConfirm = v.findViewById(R.id.btnConfirm);
@@ -156,7 +151,6 @@ private EditText mEmail, mPassword;
             intent.putExtra("userName", user.getDisplayName());
             Uri profilePicUrl = user.getPhotoUrl();
 
-
             intent.putExtra("userPhoto", profilePicUrl);
             startActivity(intent);
 
@@ -200,7 +194,7 @@ private EditText mEmail, mPassword;
     }
 
 
-    public interface LoginListener {
+    public interface RegisterListener {
         void onButtonClicked(String text);
 
     }
@@ -211,7 +205,7 @@ private EditText mEmail, mPassword;
 
         try {
 
-            mListener = (LoginListener) context;
+            mListener = (RegisterListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
                     + " must implement loginmodal");

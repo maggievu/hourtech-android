@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class Search_home extends MainActivity implements LoginModal.LoginListener {
+public class Search_home extends MainActivity implements LoginModal.LoginListener, RegisterModal.RegisterListener {
 
     private static final String TAG = "Search Home";
 
@@ -72,7 +72,11 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
         loginmodal.show(getSupportFragmentManager(), "login");
 
     }
+    public void registerModal(View view) {
+        RegisterModal registermodal = new RegisterModal();
+        registermodal.show(getSupportFragmentManager(), "register");
 
+    }
     public void afterLogin(View view) {
 
         String search = searchInput.getText().toString();

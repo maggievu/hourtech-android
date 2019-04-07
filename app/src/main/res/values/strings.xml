@@ -51,4 +51,7 @@
     <string name="terms_btn"><![CDATA[Terms & Policy]]></string>
     <string name="reviews">Reviews</string>
 
+    <string name="register_title">Register</string>
+
+
 </resources>

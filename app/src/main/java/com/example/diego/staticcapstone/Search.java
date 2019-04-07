@@ -66,7 +66,9 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 break;
             case R.id.nav_activity:
                 Log.e("page is:", "activity");
-                fragment = new ActivityFragment();
+
+                //commented out for the final presentation, not in scope
+                //fragment = new ActivityFragment();
 
                 break;
             case R.id.nav_search:
@@ -77,7 +79,8 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 break;
             case R.id.nav_messages:
                 Log.e("page is:", "messages");
-                fragment = new MessagesFragment();
+                //commented out for the final presentation, not in scope
+                //fragment = new MessagesFragment();
 
                 break;
             case R.id.nav_menu:
@@ -102,7 +105,6 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         return loadFragment(fragment);
     }
-
 
 
     private void setUpDrawer() {
