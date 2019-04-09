@@ -47,7 +47,6 @@ public class RegisterModal extends BottomSheetDialogFragment {
 
         Button buttonConfirm = v.findViewById(R.id.btnConfirm);
         Button buttonGoogle = v.findViewById(R.id.btnGoogleLogin);
-//        Button btnLogout = v.findViewById(R.id.btnLogout);
 
         pDialog = new ProgressDialog(getActivity());
 
@@ -138,40 +137,20 @@ public class RegisterModal extends BottomSheetDialogFragment {
 
         //ImageView profileImage = getActivity().findViewById(R.id.profilePic);
         if (user != null) {
-//            displayName.setText(user.getDisplayName());
-            // displayName.setVisibility(View.VISIBLE);
-
-
-            Log.e(TAG, "logged as " + user.getDisplayName());
             Toast.makeText(getActivity(), "logged as " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
 
             //get the user name and send to the profile class
-//            Intent intent = new Intent(getActivity().getApplicationContext(), ProfileFragment.class);
             Intent intent = new Intent(getActivity().getApplicationContext(), Search.class);
             intent.putExtra("userName", user.getDisplayName());
-            Uri profilePicUrl = user.getPhotoUrl();
+            String emailUser = user.getEmail();
+            String userPhotoString = user.getPhotoUrl().toString();
 
-            intent.putExtra("userPhoto", profilePicUrl);
+            intent.putExtra("userPhoto", userPhotoString);
+            intent.putExtra("userEmail", emailUser);
             startActivity(intent);
 
-
-            // Loading profile image
-//            Uri profilePicUrl = user.getPhotoUrl();
-            if (profilePicUrl != null) {
-                //   Glide.with(this).load(profilePicUrl)
-                //         .into(profileImage);
-            }
-            // profileImage.setVisibility(View.VISIBLE);
-            //  getActivity().findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-//            getActivity().findViewById(R.id.btnLogout).setVisibility(View.VISIBLE);
         } else {
-
             Log.e(TAG, "not logged");
-
-//             displayName.setVisibility(View.GONE);
-            // profileImage.setVisibility(View.GONE);
-            // getActivity().findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-//            getActivity().findViewById(R.id.btnLogout).setVisibility(View.GONE);
         }
     }
 

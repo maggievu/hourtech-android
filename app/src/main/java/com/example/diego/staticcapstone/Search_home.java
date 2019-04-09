@@ -25,12 +25,11 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
         searchInput = findViewById(R.id.searchInput);
         searchBtn = findViewById(R.id.searchBtn);
         btn_login = findViewById(R.id.btn_login);
-//TODO: uncoment this line bellow when compile to production
-        //        searchInput.setText("");
+                searchInput.setText("");
 
 
 
-        //TODO: implements the enter key to submit the search
+        //TODO to the future: implements the enter key to submit the search
         searchInput.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
@@ -49,9 +48,8 @@ public class Search_home extends MainActivity implements LoginModal.LoginListene
     @Override
     protected void onResume() {
         super.onResume();
-        //TODO: uncoment this line bellow when compile to production
 
-//        searchInput.setText("");
+        searchInput.setText("");
         searchInput.clearFocus();
         searchInput.setOnKeyListener(new View.OnKeyListener() {
             @Override
