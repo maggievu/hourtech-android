@@ -10,11 +10,11 @@
 
 
     <TextView
-        android:id="@+id/logintitle"
+        android:id="@+id/registerTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="@string/logintitle"
+        android:text="@string/register_title"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp" />
@@ -68,16 +68,6 @@
         android:textColor="@color/colorPrimaryDark" />
 
     <TextView
-        android:id="@+id/forgotPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-
-        android:text="@string/forgot_pwd"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark" />
-
-    <TextView
         android:id="@+id/or_txtlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -96,15 +86,6 @@
         android:layout_margin="10dp"
 
         android:background="@drawable/signingoogle"
-        android:textColor="@color/colorPrimaryDark" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/register_login"
-        android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark" />
 
     <Button

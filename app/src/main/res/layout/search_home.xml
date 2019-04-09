@@ -31,7 +31,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-
             app:srcCompat="@drawable/ic_ht_logo_white_vertical" />
 
         <TextView
@@ -43,7 +42,6 @@
             android:text="@string/text_intro_search"
             android:textColor="@color/txt_white" />
 
-        <!--TODO: remove the text when compile to production -->
 
         <EditText
             android:id="@+id/searchInput"
@@ -57,11 +55,10 @@
             android:hint="@string/searchInput"
             android:padding="@dimen/padding_input"
             android:paddingRight="20dp"
-
-            android:text="web"
+            android:text=""
             android:textColor="@android:color/black"
-
             android:textSize="@dimen/txt_input" />
+
         <ImageButton
             android:id="@+id/searchBtn"
             android:layout_width="165dp"
@@ -103,6 +100,7 @@
             android:layout_weight=".5"
             android:background="@color/txt_white"
             android:text="@string/btn_register"
+            android:onClick="registerModal"
             android:textColor="@color/txt_blue" />
 
     </LinearLayout>

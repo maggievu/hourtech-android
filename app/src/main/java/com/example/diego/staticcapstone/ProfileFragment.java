@@ -2,6 +2,7 @@ package com.example.diego.staticcapstone;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,15 +41,21 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         TextView username = getView().findViewById(R.id.user_name);
         ImageView userphoto = getView().findViewById(R.id.profile_pic);
+        EditText usermailedit = getView().findViewById(R.id.user_email_details_input);
+        EditText usernameedit = getView().findViewById(R.id.user_name_details_input);
         Bundle bundle = this.getArguments();
 
         String usr = bundle.containsKey("userName") ? bundle.getString("userName") : "default";
+
         if (usr != null) {
-            Log.e(TAG, "username is not null");
+            Uri myUri = Uri.parse(bundle.getString("userPhoto"));
+            Glide.with(this).load(myUri).into(userphoto);
+
             username.setText(bundle.getString("userName"));
-            Glide.with(this).load(bundle.getString("userPhoto")).into(userphoto);
+            usernameedit.setText(bundle.getString("userName"));
+            usermailedit.setText(bundle.getString("userEmail"));
+
         } else {
-            Log.e(TAG, "it's null");
 
         }
 

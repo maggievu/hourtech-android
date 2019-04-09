@@ -51,14 +51,15 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 Log.e("page is:", "profile");
 
 
-                //TODO: get the photo from the login modal and send to the profile fragment.
                 Intent intent = getIntent();
                 String userName = intent.getStringExtra("userName");
                 String userPhoto = intent.getStringExtra("userPhoto");
+                String userEmail = intent.getStringExtra("userEmail");
                 Fragment fragment1 = new ProfileFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("userName", userName);
                 bundle.putString("userPhoto", userPhoto);
+                bundle.putString("userEmail", userEmail);
                 fragment1.setArguments(bundle);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment1).commit();
                 item.setChecked(true);
@@ -66,7 +67,9 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 break;
             case R.id.nav_activity:
                 Log.e("page is:", "activity");
-                fragment = new ActivityFragment();
+
+                //commented out for the final presentation, not in scope
+                //fragment = new ActivityFragment();
 
                 break;
             case R.id.nav_search:
@@ -77,7 +80,9 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
                 break;
             case R.id.nav_messages:
                 Log.e("page is:", "messages");
-                fragment = new MessagesFragment();
+
+                //commented out for the final presentation, not in scope
+                //fragment = new MessagesFragment();
 
                 break;
             case R.id.nav_menu:
@@ -102,7 +107,6 @@ public class Search extends MainActivity implements BottomNavigationView.OnNavig
 
         return loadFragment(fragment);
     }
-
 
 
     private void setUpDrawer() {
